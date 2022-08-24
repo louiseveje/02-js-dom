@@ -1,0 +1,114 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Øvelse 6</title>
+
+    <style>
+      section {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        align-items: center;
+        gap: 20px;
+        padding-inline: 20px;
+      }
+
+      article {
+        border: 1px black solid;
+      }
+
+      footer {
+        text-align: center;
+        border-top: solid black 1px;
+        border-bottom: solid black 1px;
+        margin-bottom: 50px;
+        padding: 30px;
+      }
+
+      header {
+        text-align: center;
+        border-bottom: solid black 1px;
+      }
+
+      h2 {
+        padding-top: 1rem;
+        padding-left: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Titel</h1>
+    </header>
+
+    <main>
+      <h2>Undertitel</h2>
+      <section>
+        <article>
+          <img src="https://placeimg.com/640/480/any" alt="" class="first" />
+          <h3>article 1</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, temporibus fugiat doloremque laudantium consequuntur ut obcaecati nam repellendus tempore excepturi molestias praesentium. Eos similique at fugiat deleniti maxime quidem delectus.</p>
+        </article>
+
+        <article>
+          <img src="https://placeimg.com/640/480/any" alt="" />
+          <h3>article 2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et vel deleniti ipsam impedit alias doloribus provident excepturi, sunt ducimus esse? Ipsa ea quia nulla, laborum hic delectus? Nobis, explicabo quaerat?</p>
+        </article>
+      </section>
+    </main>
+    <footer>this is the footer</footer>
+
+    <script>
+      let img1 = document.querySelector("article:nth-child(1) img");
+
+      document.addEventListener("DOMContentLoaded", start);
+
+      function start() {
+        console.log("loaded");
+
+        //tag fat i section og lav en variabel
+        let mainSection = document.querySelector("section");
+        //lav et article tag vha createElement
+        let newArticle = document.createElement("article");
+
+        /////////////////////////// tilføj billede
+        let newPic = document.createElement("img");
+        newPic.src = "billeder/hund2.webp";
+        newArticle.appendChild(newPic);
+
+        /////////////////////////// tilføj overskrift
+        //lav en overskrift
+        let overskrift = document.createElement("h3");
+        //tilføj text til overskriften vha createTextNode
+        let overskriftText = document.createTextNode("article 3");
+        //tilføj texten til overskrift
+        overskrift.appendChild(overskriftText);
+        //tilføj overskrift med texten til newArticle
+        newArticle.appendChild(overskrift);
+
+        /////////////////////////// tilføj paragraf
+        let paragraf = document.createElement("paragraf");
+        let paragrafText = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et vel deleniti ipsam impedit alias doloribus provident excepturi, sunt ducimus esse? Ipsa ea quia nulla, laborum hic delectus? Nobis, explicabo quaerat?");
+        paragraf.appendChild(paragrafText);
+        newArticle.appendChild(paragraf);
+
+        //tilføj article i section vha appendChild = tilføj et barn
+        mainSection.appendChild(newArticle);
+
+        img1.addEventListener("click", skiftBillede);
+      }
+
+      function skiftBillede() {
+        // console.log(this);
+        let tal = Math.round(Math.random() * 10);
+        img1.src = "https://placeimg.com/400/300/arch?t=" + tal;
+      }
+    </script>
+  </body>
+</html>

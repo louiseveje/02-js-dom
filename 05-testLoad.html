@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Øvelse 3</title>
+    <title>Øvelse 5</title>
 
     <style>
       section {
@@ -64,18 +64,40 @@
     </main>
     <footer>this is the footer</footer>
     <script>
-      //tag fat i billede 1 og lav en variabel
-      const pic1 = document.querySelector("article:nth-child(1) img");
-      //se om du har taget fat i billedet i konsollen
-      console.log(pic1);
-      //udskift billede vha. src
-      pic1.src = "billeder/hund1.webp";
-      pic1.alt = "hunni";
+      document.addEventListener("DOMContentLoaded", start);
 
-      const pic2 = document.querySelector("article:nth-child(2) img");
-      console.log(pic2);
-      pic2.src = "billeder/hund2.webp";
-      pic2.alt = "hunni";
+      function start() {
+        console.log("loaded");
+
+        //tag fat i section og lav en variabel
+        let mainSection = document.querySelector("section");
+        //lav et article tag vha createElement
+        let newArticle = document.createElement("article");
+
+        /////////////////////////// tilføj billede
+        let newPic = document.createElement("img");
+        newPic.src = "billeder/hund2.webp";
+        newArticle.appendChild(newPic);
+
+        /////////////////////////// tilføj overskrift
+        //lav en overskrift
+        let overskrift = document.createElement("h3");
+        //tilføj text til overskriften vha createTextNode
+        let overskriftText = document.createTextNode("article 3");
+        //tilføj texten til overskrift
+        overskrift.appendChild(overskriftText);
+        //tilføj overskrift med texten til newArticle
+        newArticle.appendChild(overskrift);
+
+        /////////////////////////// tilføj paragraf
+        let paragraf = document.createElement("paragraf");
+        let paragrafText = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et vel deleniti ipsam impedit alias doloribus provident excepturi, sunt ducimus esse? Ipsa ea quia nulla, laborum hic delectus? Nobis, explicabo quaerat?");
+        paragraf.appendChild(paragrafText);
+        newArticle.appendChild(paragraf);
+
+        //tilføj article i section vha appendChild = tilføj et barn
+        mainSection.appendChild(newArticle);
+      }
     </script>
   </body>
 </html>
