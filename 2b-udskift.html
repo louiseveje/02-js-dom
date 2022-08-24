@@ -1,0 +1,98 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      section {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        align-items: center;
+        gap: 20px;
+        padding-inline: 50px;
+      }
+
+      article {
+        border: 1px black solid;
+      }
+
+      footer {
+        text-align: center;
+        border-top: solid black 1px;
+        border-bottom: solid black 1px;
+        margin-bottom: 50px;
+        padding: 30px;
+      }
+
+      header {
+        text-align: center;
+        border-bottom: solid black 1px;
+      }
+
+      h2 {
+        padding-top: 1rem;
+        padding-left: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Titel</h1>
+    </header>
+
+    <main>
+      <h2>Undertitel</h2>
+      <section>
+        <article>
+          <img src="placeimg_640_480_arch.jpg" alt="trae" />
+          <h3>article 1</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, temporibus fugiat doloremque laudantium consequuntur ut obcaecati nam repellendus tempore excepturi molestias praesentium. Eos similique at fugiat deleniti maxime quidem delectus.</p>
+        </article>
+
+        <article>
+          <img src="placeimg_640_480_arch.jpg" alt="trae" />
+          <h3>article 2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et vel deleniti ipsam impedit alias doloribus provident excepturi, sunt ducimus esse? Ipsa ea quia nulla, laborum hic delectus? Nobis, explicabo quaerat?</p>
+        </article>
+      </section>
+    </main>
+    <footer>this is the footer</footer>
+    <script>
+      const overskrift = document.querySelector("h1");
+      //tager fat i overskriften "titel"
+      overskrift.textContent;
+      //udskriver "titel" i konsollen
+      console.log(overskrift.textContent);
+      //ændrer overskriften "titel" med "billede" - giver textContent en ny værdi
+      overskrift.textContent = "billede";
+      //udkriver "billede" i konsollen - både billede OG titel bliver udskrevet her
+      console.log(overskrift.textContent);
+
+      //udskift article 1's overskrift
+      const article1overskrift = document.querySelector("article:nth-child(1) h3");
+      article1overskrift.textContent = "overskrift 1";
+      console.log(article1overskrift.textContent);
+
+      //udskift article 1's paragraf
+      const article1paragraf = document.querySelector("article:nth-child(1) p");
+      article1paragraf.textContent = "hej hej hej";
+      console.log(article1paragraf.textContent);
+
+      //udskift article 2's overskrift
+      const article2overskrift = document.querySelector("article:nth-child(2) h3");
+      article2overskrift.textContent = "overskrift 2";
+      console.log(article2overskrift.textContent);
+
+      //udskift article 2's paragraf
+      const article2paragraf = document.querySelector("article:nth-child(2) p");
+      article2paragraf.textContent = "hej hej hej hej";
+      console.log(article2paragraf.textContent);
+    </script>
+  </body>
+</html>

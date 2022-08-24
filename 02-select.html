@@ -1,0 +1,105 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      section {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        align-items: center;
+        gap: 20px;
+        padding-inline: 50px;
+      }
+
+      article {
+        border: 1px black solid;
+      }
+
+      footer {
+        text-align: center;
+        border-top: solid black 1px;
+        border-bottom: solid black 1px;
+        margin-bottom: 50px;
+        padding: 30px;
+      }
+
+      header {
+        text-align: center;
+        border-bottom: solid black 1px;
+      }
+
+      h2 {
+        padding-top: 1rem;
+        padding-left: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Titel</h1>
+    </header>
+
+    <main>
+      <h2>Undertitel</h2>
+      <section>
+        <article>
+          <img src="placeimg_640_480_arch.jpg" alt="trae" />
+          <h3>article 1</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, temporibus fugiat doloremque laudantium consequuntur ut obcaecati nam repellendus tempore excepturi molestias praesentium. Eos similique at fugiat deleniti maxime quidem delectus.</p>
+        </article>
+
+        <article>
+          <img src="placeimg_640_480_arch.jpg" alt="trae" />
+          <h3>article 2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et vel deleniti ipsam impedit alias doloribus provident excepturi, sunt ducimus esse? Ipsa ea quia nulla, laborum hic delectus? Nobis, explicabo quaerat?</p>
+        </article>
+      </section>
+    </main>
+    <footer>this is the footer</footer>
+    <script>
+      //vælg et element vha document.querySelector. Sæt den derefter ind i en variable "const", så den kan bruges senere
+      const overskrift = document.querySelector("h1");
+      //tag din variabel og sæt den sammen med textCOntent som fortæller noget om "text", så den får "titel" frem i stedet for "h1"
+      overskrift.textContent;
+      //console.log linjen med textContent den, så den vises i konsollen når du vælger den
+      console.log(overskrift.textContent);
+
+      const underoverskrift = document.querySelector("h2");
+      underoverskrift.textContent;
+      console.log(underoverskrift.textContent);
+
+      const billede = document.querySelector("img");
+      //vælger src i stedet for textContent, da det fortæller noget om billedet
+      billede.src;
+      console.log(billede.src);
+
+      const articleoverskrift = document.querySelector("h3");
+      articleoverskrift.textContent;
+      console.log(articleoverskrift.textContent);
+
+      const paragraf = document.querySelector("p");
+      paragraf.textContent;
+      console.log(paragraf.textContent);
+
+      //vælger article 2's barn img
+      const billede2 = document.querySelector("article:nth-child(2) img");
+      billede2.src;
+      console.log(billede2.src);
+
+      const underoverskrift2 = document.querySelector("article:nth-child(2) h3");
+      underoverskrift2.textContent;
+      console.log(underoverskrift2.textContent);
+
+      const paragraf2 = document.querySelector("article:nth-child(2) p");
+      paragraf2.textContent;
+      console.log(paragraf2.textContent);
+    </script>
+  </body>
+</html>
